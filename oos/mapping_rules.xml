@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rules>
+	<!--rule for 'widget' param - example-->
+    <rule>
+		<!--param alias-->
+        <alias>widget</alias>
+		<!--param type-->
+        <type>boolean</type>
+		<!--value forming rules-->
+        <values>
+			<value>
+				<!--result value-->
+				<target>false</target>
+				<!--foreign values, resulting in value above-->
+				<sources>
+					<source>no</source>
+					<source>0</source>
+					<source>нет</source>
+					<source></source>
+				</sources>
+			</value>
+			<value>
+				<target>true</target>
+				<sources>
+					<source>yes</source>
+					<source>1</source>
+					<source>да</source>
+				</sources>
+			</value>
+		</values>
+		<rawAllowed>false</rawAllowed>
+    </rule>
+	<rule>
+        <alias>work_mode</alias>
+        <type>boolean</type>
+        <values>
+			<value>
+				<target>false</target>
+				<sources>
+					<source>no</source>
+					<source>0</source>
+					<source>нет</source>
+					<source></source>
+				</sources>
+			</value>
+			<value>
+				<target>true</target>
+				<sources>
+					<source>yes</source>
+					<source>1</source>
+					<source>да</source>
+				</sources>
+			</value>
+		</values>
+		<rawAllowed>false</rawAllowed>
+    </rule>
+    <rule>
+		<!--param alias-->
+        <alias>send_receipt</alias>
+		<!--param type-->
+        <type>boolean</type>
+		<!--value forming rules-->
+        <values>
+			<value>
+				<!--result value-->
+				<target>false</target>
+				<!--foreign values, resulting in value above-->
+				<sources>
+					<source>no</source>
+					<source>0</source>
+					<source>нет</source>
+					<source></source>
+				</sources>
+			</value>
+			<value>
+				<target>true</target>
+				<sources>
+					<source>yes</source>
+					<source>1</source>
+					<source>да</source>
+				</sources>
+			</value>
+		</values>
+		<rawAllowed>false</rawAllowed>
+    </rule>
+    <rule>
+		<!--param alias-->
+        <alias>default_tax</alias>
+		<!--param type-->
+        <type>boolean</type>
+		<!--value forming rules-->
+        <values>
+			<value>
+				<!--result value-->
+				<target>false</target>
+				<!--foreign values, resulting in value above-->
+				<sources>
+					<source>no</source>
+					<source>0</source>
+					<source>нет</source>
+					<source></source>
+				</sources>
+			</value>
+			<value>
+				<target>true</target>
+				<sources>
+					<source>yes</source>
+					<source>1</source>
+					<source>да</source>
+				</sources>
+			</value>
+		</values>
+		<rawAllowed>false</rawAllowed>
+    </rule>
+    <rule>
+		<!--param alias-->
+        <alias>hold</alias>
+		<!--param type-->
+        <type>boolean</type>
+		<!--value forming rules-->
+        <values>
+			<value>
+				<!--result value-->
+				<target>false</target>
+				<!--foreign values, resulting in value above-->
+				<sources>
+					<source>no</source>
+					<source>0</source>
+					<source>нет</source>
+					<source></source>
+				</sources>
+			</value>
+			<value>
+				<target>true</target>
+				<sources>
+					<source>yes</source>
+					<source>1</source>
+					<source>да</source>
+				</sources>
+			</value>
+		</values>
+		<rawAllowed>false</rawAllowed>
+    </rule>
+    <rule>
+		<!--param alias-->
+        <alias>accept_all_payments</alias>
+		<!--param type-->
+        <type>boolean</type>
+		<!--value forming rules-->
+        <values>
+			<value>
+				<!--result value-->
+				<target>false</target>
+				<!--foreign values, resulting in value above-->
+				<sources>
+					<source>no</source>
+					<source>0</source>
+					<source>нет</source>
+					<source></source>
+				</sources>
+			</value>
+			<value>
+				<target>true</target>
+				<sources>
+					<source>yes</source>
+					<source>1</source>
+					<source>да</source>
+				</sources>
+			</value>
+		</values>
+		<rawAllowed>false</rawAllowed>
+    </rule>
+    
+</rules>

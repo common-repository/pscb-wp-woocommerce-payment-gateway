@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Redirecting to OOS</title>
+        <script src="https://oos.pscb.ru/s/widget/pscb_oos_pay.min.js"></script>
+    </head>
+    <body>
+        <div style="display:none">
+            <form action='{$http_params["url"]}' method="post" style="display:none" id="pscb-payment-form" name="vm_oos_form" data-widget='{$http_params["widget"]}'>
+                    <input name="marketPlace" value='{$http_params["marketPlace"]}'>
+                    <input name="message" value='{$http_params["message"]}'>
+                    <input name="signature" value='{$http_params["signature"]}'>
+                    <input type=submit value="Перейти на платёжную страницу OOS">
+            </form>
+        </div>
+        <script type="text/javascript">
+            var _pscb_form=document.getElementById('pscb-payment-form');
+            if(_pscb_form.dataset.widget!=undefined && _pscb_form.dataset.widget!=null && _pscb_form.dataset.widget!=false){
+                var requestData = JSON.parse(atob(_pscb_form.elements.message.value));
+                doPscbPay(requestData);
+            }else{
+                document.vm_oos_form.submit();
+            }
+        </script>
+    </body>
+</html>

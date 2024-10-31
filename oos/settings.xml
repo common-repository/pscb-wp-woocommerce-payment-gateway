@@ -1,0 +1,904 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fields>
+    <field>
+        <alias>method_title</alias>
+        <title>
+            <ru>Наименование способа оплаты</ru>
+            <en>Payment method title</en>
+        </title>
+        <description>
+            <ru></ru>
+            <en></en>
+        </description>
+        <default>
+            <ru>Банковской картой онлайн</ru>
+            <en>Credit/debit card</en>
+        </default>
+        <type>text</type>
+        <required>0</required>
+        <order>10</order>
+        <visible>1</visible>
+    </field>
+    <field>
+        <alias>method_description</alias>
+        <title>
+            <ru>Описание способа оплаты</ru>
+            <en>Payment method description</en>
+        </title>
+        <description>
+            <ru></ru>
+            <en></en>
+        </description>
+        <default>
+            <ru>Visa, Mastercard, Maestro, "Мир", UnionPay</ru>
+            <en>Visa, Mastercard, Maestro, "Mir", UnionPay</en>
+        </default>
+        <type>text</type>
+        <required></required>
+        <order>20</order>
+        <visible>1</visible>
+    </field>
+    <field>
+        <alias>merchant_id</alias>
+        <title>
+            <ru>ID магазина</ru>
+            <en>Marketplace ID</en>
+        </title>
+        <description>
+            <ru>Скопируйте значение из Кабинета мерчанта: “Профиль” - “ID Магазина”.</ru>
+            <en>Copy value from your Merchant Control Panel ("Profile" - "Marketplace ID")</en>
+        </description>
+        <default>
+            <ru></ru>
+            <en></en>
+        </default>
+        <type>text</type>
+        <required>1</required>
+        <order>30</order>
+        <visible>1</visible>
+    </field>
+    <field>
+        <alias>merchant_key</alias>
+        <title>
+            <ru>Ключ API</ru>
+            <en>API key</en>
+        </title>
+        <description>
+            <ru>Скопируйте значение из Кабинета мерчанта: “Профиль” - “Ключ API”.</ru>
+            <en>Copy value from your Merchant Control Panel ("Profile" - "API Key")</en>
+        </description>
+        <default>
+            <ru></ru>
+            <en></en>
+        </default>
+        <type>text</type>
+        <required>1</required>
+        <order>40</order>
+        <visible>1</visible>
+    </field>
+    <field>
+        <alias>companyEmail</alias>
+        <title>
+            <ru>E-Mail организации</ru>
+            <en>Organization e-mail</en>
+        </title>
+        <description>
+            <ru></ru>
+            <en></en>
+        </description>
+        <default>
+            <ru></ru>
+            <en></en>
+        </default>
+        <type>text</type>
+        <required>1</required>
+        <order>45</order>
+        <visible>1</visible>
+    </field>
+    <field>
+        <alias>work_mode</alias>
+        <title>
+            <ru>Тестовый режим</ru>
+            <en>Test mode</en>
+        </title>
+        <description>
+            <ru>Если настройка активна, модуль будет отправлять системе запросы на проведение тестовых платежей без списания реальных денежных средств</ru>
+            <en>If on, the plugin initiates test transactions without actual money transfering from the bank-issuer account</en>
+        </description>
+        <default>
+            <ru>1</ru>
+            <en>1</en>
+        </default>
+        <type>checkbox</type>
+        <required>0</required>
+        <order>50</order>
+        <visible>1</visible>
+    </field>
+    <field>
+        <alias>payment_method</alias>
+        <title>
+            <ru>Платежный метод</ru>
+            <en>Payment method</en>
+        </title>
+        <description>
+            <ru></ru>
+            <en></en>
+        </description>
+        <default>
+            <ru>ac</ru>
+            <en>ac</en>
+        </default>
+        <type>select</type>
+        <options>
+            <option>
+                <title>
+                    <ru>На выбор клиента</ru>
+                    <en>By customer choice</en>
+                </title>
+                <value></value>
+            </option>
+            <option>
+                <title>
+                    <ru>Банковская карта</ru>
+                    <en>Bank card</en>
+                </title>
+                <value>ac</value>
+            </option>
+            <option>
+                <title>
+                    <ru>QR-код</ru>
+                    <en>QR-code</en>
+                </title>
+                <value>sbp</value>
+            </option>
+        </options>
+        <required></required>
+        <order>59</order>
+        <visible>1</visible>
+    </field>
+    <field>
+        <alias>hold</alias>
+        <title>
+            <ru>Холдирование</ru>
+            <en>Pre-auth transaction</en>
+        </title>
+        <description>
+            <ru>Холдирование работает только при оплате банковской картой</ru>
+            <en>Works only for payments via bank cards</en>
+        </description>
+        <default>
+            <ru>0</ru>
+            <en>0</en>
+        </default>
+        <type>checkbox</type>
+        <required>0</required>
+        <order>70</order>
+        <visible>1</visible>
+    </field>
+	<field>
+		<alias>customer_info</alias>
+		<title>
+			<ru>Передавать контактные данные покупателя</ru>
+			<en>Provide buyer contact information</en>
+		</title>
+		<description>
+			<ru>1</ru>
+			<en>1</en>
+		</description>
+		<default>
+			<ru></ru>
+			<en></en>
+		</default>
+		<type>select</type>
+		<options>
+			<option>
+				<title>
+					<ru>Да</ru>
+					<en>Yes</en>
+				</title>
+				<value>1</value>
+			</option>
+			<option>
+				<title>
+					<ru>Нет</ru>
+					<en>No</en>
+				</title>
+				<value>0</value>
+			</option>
+		</options>
+		<required></required>
+		<order>75</order>
+		<visible>1</visible>
+	</field>
+	<field>
+		<alias>customer_id</alias>
+		<title>
+			<ru>Передавать дополнительный идентификатор покупателя</ru>
+			<en>Pass additional buyer ID</en>
+		</title>
+		<description>
+			<ru>1</ru>
+			<en>1</en>
+		</description>
+		<default>
+			<ru></ru>
+			<en></en>
+		</default>
+		<type>select</type>
+		<options>
+			<option>
+				<title>
+					<ru>Да</ru>
+					<en>Yes</en>
+				</title>
+				<value>1</value>
+			</option>
+			<option>
+				<title>
+					<ru>Нет</ru>
+					<en>No</en>
+				</title>
+				<value>0</value>
+			</option>
+		</options>
+		<required></required>
+		<order>76</order>
+		<visible>1</visible>
+	</field>
+	<field>
+		<alias>basket_composition</alias>
+		<title>
+			<ru>Передавать состав корзины</ru>
+			<en>Transfer cart contents</en>
+		</title>
+		<description>
+			<ru>1</ru>
+			<en>1</en>
+		</description>
+		<default>
+			<ru></ru>
+			<en></en>
+		</default>
+		<type>select</type>
+		<options>
+			<option>
+				<title>
+					<ru>Да</ru>
+					<en>Yes</en>
+				</title>
+				<value>1</value>
+			</option>
+			<option>
+				<title>
+					<ru>Нет</ru>
+					<en>No</en>
+				</title>
+				<value>0</value>
+			</option>
+		</options>
+		<required></required>
+		<order>77</order>
+		<visible>1</visible>
+	</field>
+    <field>
+        <alias>notification_url</alias>
+        <title>
+            <ru>Адрес уведомления магазина</ru>
+            <en>Payment notification URL</en>
+        </title>
+        <description>
+            <ru></ru>
+            <en></en>
+        </description>
+        <default>
+            <ru></ru>
+            <en></en>
+        </default>
+        <type>text</type>
+        <required>1</required>
+        <order>80</order>
+        <visible>1</visible>
+    </field>
+    <field>
+        <alias>success_url</alias>
+        <title>
+            <ru>Страница успешной оплаты</ru>
+            <en>Success URL</en>
+        </title>
+        <description>
+            <ru>Перенаправление на эту страницу после успешной оплаты</ru>
+            <en>Redirect to this URL after successful payment</en>
+        </description>
+        <default>
+            <ru></ru>
+            <en></en>
+        </default>
+        <type>text</type>
+        <required>1</required>
+        <order>90</order>
+        <visible>1</visible>
+    </field>
+    <field>
+        <alias>fail_url</alias>
+        <title>
+            <ru>Страница неуспешной оплаты</ru>
+            <en>Fail URL</en>
+        </title>
+        <description>
+            <ru>Перенаправление на эту страницу после неуспешной оплаты</ru>
+            <en>Redirect to this URL after failed payment</en>
+        </description>
+        <default>
+            <ru></ru>
+            <en></en>
+        </default>
+        <type>text</type>
+        <required>1</required>
+        <order>100</order>
+        <visible>1</visible>
+    </field>
+    <field>
+        <alias>status_pending</alias>
+        <title>
+            <ru>Статус заказа до оплаты</ru>
+            <en>Order status before payment</en>
+        </title>
+        <description>
+            <ru></ru>
+            <en></en>
+        </description>
+        <default>
+            <ru></ru>
+            <en></en>
+        </default>
+        <type>select</type>
+        <required>1</required>
+        <order>110</order>
+        <visible>1</visible>
+    </field>
+    <field>
+        <alias>status_complete</alias>
+        <title>
+            <ru>Статус заказа при успешной оплате</ru>
+            <en>Order status for successfull payment</en>
+        </title>
+        <description>
+            <ru></ru>
+            <en></en>
+        </description>
+        <default>
+            <ru></ru>
+            <en></en>
+        </default>
+        <type>select</type>
+        <required>1</required>
+        <order>120</order>
+        <visible>1</visible>
+    </field>
+    <field>
+        <alias>status_failed</alias>
+        <title>
+            <ru>Статус заказа при неуспешной оплате</ru>
+            <en>Order status for failed payment</en>
+        </title>
+        <description>
+            <ru></ru>
+            <en></en>
+        </description>
+        <default>
+            <ru></ru>
+            <en></en>
+        </default>
+        <type>select</type>
+        <required>1</required>
+        <order>130</order>
+        <visible>1</visible>
+    </field>
+    <field>
+        <alias>lang</alias>
+        <title>
+            <ru>Язык платежных страниц</ru>
+            <en>Payment language</en>
+        </title>
+        <description>
+            <ru></ru>
+            <en></en>
+        </description>
+        <default>
+            <ru>ru</ru>
+            <en>ru</en>
+        </default>
+        <type>select</type>
+        <required>0</required>
+		<options>
+			<option>
+                <title>
+                    <ru>Авто</ru>
+                    <en>Auto</en>
+                </title>
+                <value></value>
+            </option>
+            <option>
+                <title>
+                    <ru>RU</ru>
+                    <en>RU</en>
+                </title>
+                <value>ru</value>
+            </option>
+			<option>
+                <title>
+                    <ru>EN</ru>
+                    <en>EN</en>
+                </title>
+                <value>en</value>
+            </option>
+		</options>
+        <order>140</order>
+        <visible>1</visible>
+    </field>
+    <field>
+        <alias>accept_all_payments</alias>
+        <title>
+            <ru>Поддержка упрощенной интеграции</ru>
+            <en>Simplified integration support</en>
+        </title>
+        <description>
+            <ru>Если настройка отключена, платежный шлюз будет отклонять любые платежи, которые были инициированы не через модуль</ru>
+            <en>If off, payment gateway will reject all payments, excepting initiated by the plugin (e.g. invoices from Merchant Control Panel)</en>
+        </description>
+        <default>
+            <ru>1</ru>
+            <en>1</en>
+        </default>
+        <type>checkbox</type>
+        <required>0</required>
+        <order>150</order>
+        <visible>0</visible>
+    </field>
+	<field>
+        <alias>log_level</alias>
+        <title>
+            <ru>Логирование</ru>
+            <en>Logging</en>
+        </title>
+        <description>
+            <ru>Для отладки рекомендуется использовать полное логирование.</ru>
+            <en>For debugging, it's recommended to use full logging</en>
+        </description>
+        <default>
+            <ru>1</ru>
+            <en>1</en>
+        </default>
+        <type>select</type>
+        <options>
+            <option>
+                <title>
+                    <ru>Только ошибки</ru>
+                    <en>Errors only</en>
+                </title>
+				<!--ERROR-->
+                <value>4</value>
+            </option>
+			<option>
+                <title>
+                    <ru>Полное</ru>
+                    <en>Full</en>
+                </title>
+				<!--TRACE-->
+                <value>1</value>
+            </option>
+        </options>
+        <required>0</required>
+        <order>155</order>
+        <visible>1</visible>
+    </field>
+    <field>
+        <alias>send_receipt</alias>
+        <title>
+            <ru>Поддержка онлайн-кассы</ru>
+            <en>Cashbox support</en>
+        </title>
+        <description>
+            <ru>Если настройка активна, модуль будет передавать платежному шлюзу информацию о составе корзины для формирования фискальных чеков</ru>
+            <en>If on, the plugin will include checkout details into requests for fiscal receipts issuing</en>
+        </description>
+        <default>
+            <ru>0</ru>
+            <en>0</en>
+        </default>
+        <type>checkbox</type>
+        <required>0</required>
+        <order>160</order>
+        <visible>1</visible>
+    </field>
+    <field>
+        <alias>default_vat</alias>
+        <title>
+            <ru>Ставка НДС по умолчанию</ru>
+            <en>Default VAT rate</en>
+        </title>
+        <description>
+            <ru>Ставка НДС по умолчанию, передаваемая для формирования фискальных чеков</ru>
+            <en>Default VAT rate for fiscal receipts issuing</en>
+        </description>
+        <default>
+            <ru></ru>
+            <en></en>
+        </default>
+        <type>select</type>
+        <options>
+            <option>
+                <title>
+                    <ru>Без НДС</ru>
+                    <en>No VAT</en>
+                </title>
+                <value></value>
+            </option>
+            <option>
+                <title>
+                    <ru>0</ru>
+                    <en>0</en>
+                </title>
+                <value>0</value>
+            </option>
+            <option>
+                <title>
+                    <ru>10%</ru>
+                    <en>10%</en>
+                </title>
+                <value>10</value>
+            </option>
+            <option>
+                <title>
+                    <ru>20%</ru>
+                    <en>20%</en>
+                </title>
+                <value>20</value>
+            </option>
+            <option>
+                <title>
+                    <ru>10/110</ru>
+                    <en>10/110</en>
+                </title>
+                <value>10/110</value>
+            </option>
+            <option>
+                <title>
+                    <ru>20/120</ru>
+                    <en>20/120</en>
+                </title>
+                <value>20/120</value>
+            </option>
+        </options>
+        <required>0</required>
+        <order>170</order>
+        <visible>1</visible>
+    </field>
+        <field>
+        <alias>shipping_vat</alias>
+        <title>
+            <ru>Ставка НДС для доставки</ru>
+            <en>Shipping VAT rate</en>
+        </title>
+        <description>
+            <ru>Ставка НДС для доставки, передаваемая для формирования фискальных чеков</ru>
+            <en>Shipping VAT rate for fiscal receipts issuing</en>
+        </description>
+        <default>
+            <ru></ru>
+            <en></en>
+        </default>
+        <type>select</type>
+        <options>
+            <option>
+                <title>
+                    <ru>Без НДС</ru>
+                    <en>No VAT</en>
+                </title>
+                <value></value>
+            </option>
+            <option>
+                <title>
+                    <ru>0</ru>
+                    <en>0</en>
+                </title>
+                <value>0</value>
+            </option>
+            <option>
+                <title>
+                    <ru>10%</ru>
+                    <en>10%</en>
+                </title>
+                <value>10</value>
+            </option>
+            <option>
+                <title>
+                    <ru>20%</ru>
+                    <en>20%</en>
+                </title>
+                <value>20</value>
+            </option>
+            <option>
+                <title>
+                    <ru>10/110</ru>
+                    <en>10/110</en>
+                </title>
+                <value>10/110</value>
+            </option>
+            <option>
+                <title>
+                    <ru>20/120</ru>
+                    <en>20/120</en>
+                </title>
+                <value>20/120</value>
+            </option>
+        </options>
+        <required>0</required>
+        <order>175</order>
+        <visible>1</visible>
+    </field>
+	<field>
+        <alias>default_items_type</alias>
+        <title>
+            <ru>Способ расчета по умолчанию</ru>
+            <en>Payment type by default</en>
+        </title>
+        <description>
+            <ru></ru>
+            <en></en>
+        </description>
+        <default>
+            <ru></ru>
+            <en></en>
+        </default>
+        <type>select</type>
+        <options>
+            <option>
+                <title>
+                    <ru>Не выбрано</ru>
+                    <en>Not selected</en>
+                </title>
+                <value></value>
+            </option>
+			<option>
+                <title>
+                    <ru>Предоплата 100%</ru>
+                    <en>Full prepayment</en>
+                </title>
+                <value>full_prepayment</value>
+            </option>
+			<option>
+                <title>
+                    <ru>Предоплата</ru>
+                    <en>Prepayment</en>
+                </title>
+                <value>prepayment</value>
+            </option>
+			<option>
+                <title>
+                    <ru>Аванс</ru>
+                    <en>Advance</en>
+                </title>
+                <value>advance</value>
+            </option>
+			<option>
+                <title>
+                    <ru>Полный расчёт</ru>
+                    <en>Full payment</en>
+                </title>
+                <value>full_payment</value>
+            </option>
+        </options>
+        <required>0</required>
+        <order>180</order>
+        <visible>1</visible>
+    </field>
+	<field>
+        <alias>default_items_type_shipp</alias>
+        <title>
+            <ru>Способ расчета по умолчанию для доставки</ru>
+            <en>Default payment method for shipping</en>
+        </title>
+        <description>
+            <ru></ru>
+            <en></en>
+        </description>
+        <default>
+            <ru></ru>
+            <en></en>
+        </default>
+        <type>select</type>
+        <options>
+            <option>
+                <title>
+                    <ru>Не выбрано</ru>
+                    <en>Not selected</en>
+                </title>
+                <value></value>
+            </option>
+			<option>
+                <title>
+                    <ru>Предоплата 100%</ru>
+                    <en>Full prepayment</en>
+                </title>
+                <value>full_prepayment</value>
+            </option>
+			<option>
+                <title>
+                    <ru>Предоплата</ru>
+                    <en>Prepayment</en>
+                </title>
+                <value>prepayment</value>
+            </option>
+			<option>
+                <title>
+                    <ru>Аванс</ru>
+                    <en>Advance</en>
+                </title>
+                <value>advance</value>
+            </option>
+			<option>
+                <title>
+                    <ru>Полный расчёт</ru>
+                    <en>Full payment</en>
+                </title>
+                <value>full_payment</value>
+            </option>
+        </options>
+        <required>0</required>
+        <order>185</order>
+        <visible>1</visible>
+    </field>
+	<field>
+        <alias>default_items_object</alias>
+        <title>
+            <ru>Предмет расчета по умолчанию</ru>
+            <en>Payment object by default</en>
+        </title>
+        <description>
+            <ru></ru>
+            <en></en>
+        </description>
+        <default>
+            <ru></ru>
+            <en></en>
+        </default>
+        <type>select</type>
+        <options>
+            <option>
+                <title>
+                    <ru>Не выбрано</ru>
+                    <en>Not selected</en>
+                </title>
+                <value></value>
+            </option>
+			<option>
+                <title>
+                    <ru>Товар</ru>
+                    <en>Commodity</en>
+                </title>
+                <value>commodity</value>
+            </option>
+			<option>
+                <title>
+                    <ru>Работа</ru>
+                    <en>Job</en>
+                </title>
+                <value>job</value>
+            </option>
+			<option>
+                <title>
+                    <ru>Услуга</ru>
+                    <en>Service</en>
+                </title>
+                <value>service</value>
+            </option>
+			<option>
+                <title>
+                    <ru>Лотерейный билет</ru>
+                    <en>Lottery</en>
+                </title>
+                <value>lottery</value>
+            </option>
+			<option>
+                <title>
+                    <ru>Составной предмет расчета</ru>
+                    <en>Composite</en>
+                </title>
+                <value>composite</value>
+            </option>
+			<option>
+                <title>
+                    <ru>Иной предмет расчета</ru>
+                    <en>Another</en>
+                </title>
+                <value>another</value>
+            </option>
+        </options>
+        <required>0</required>
+        <order>190</order>
+        <visible>1</visible>
+    </field>
+	<field>
+        <alias>default_items_unit</alias>
+        <title>
+            <ru>Единица измерения товара по умолчанию</ru>
+            <en>Products measure by default</en>
+        </title>
+        <description>
+            <ru>Единица измерерния товара, работы, услуги</ru>
+            <en>Measure for commodity, job, service</en>
+        </description>
+        <default>
+            <ru></ru>
+            <en></en>
+        </default>
+        <type>text</type>
+        <required>0</required>
+        <order>200</order>
+        <visible>1</visible>
+    </field>
+	<field>
+        <alias>taxSystem</alias>
+        <title>
+            <ru>Система налогообложения</ru>
+            <en>Tax system</en>
+        </title>
+        <description>
+            <ru></ru>
+            <en></en>
+        </description>
+        <default>
+            <ru></ru>
+            <en></en>
+        </default>
+        <type>select</type>
+        <options>
+            <option>
+                <title>
+                    <ru>Не выбрано</ru>
+                    <en>Not selected</en>
+                </title>
+                <value></value>
+            </option>
+			<option>
+                <title>
+                    <ru>Общая СН</ru>
+                    <en>General taxation system</en>
+                </title>
+                <value>osn</value>
+            </option>
+			<option>
+                <title>
+                    <ru>Упрощенная СН (доходы)</ru>
+                    <en>Simplified Taxation System (income)</en>
+                </title>
+                <value>usn_income</value>
+            </option>
+			<option>
+                <title>
+                    <ru>Упрощенная СН (доходы минус расходы)</ru>
+                    <en>Simplified Taxation System (income minus expenses)</en>
+                </title>
+                <value>usn_income_outcome</value>
+            </option>
+			<option>
+                <title>
+                    <ru>Единый сельскохозяйственный налог</ru>
+                    <en>Uniform agricultural tax</en>
+                </title>
+                <value>esn</value>
+            </option>
+			<option>
+                <title>
+                    <ru>Патентная СН</ru>
+                    <en>Patent Taxation System</en>
+                </title>
+                <value>patent</value>
+            </option>
+        </options>
+        <required>0</required>
+        <order>210</order>
+        <visible>1</visible>
+    </field>
+</fields>
